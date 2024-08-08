@@ -1,23 +1,58 @@
-import React from 'react'
-import Details from './Details'
-import Controls from './Controls'
+import React, { useEffect, useState, useRef } from 'react';
+import Details from './Details';
+import Controls from './Controls';
 
-const Player = () => {
+const Player = (props) => {
+  const audioEl = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (isPlaying) {
+      audioEl.current.play();
+    } else {
+      audioEl.current.pause();
+    }
+  }, [isPlaying]);
+
+  const skipSong = (forwards = true) => {
+    props.setCurrentSongIndex((prevIndex) => {
+      let temp = prevIndex;
+      temp = forwards ? temp + 1 : temp - 1;
+
+      if (temp > props.songs.length - 1) {
+        temp = 0;
+      } else if (temp < 0) {
+        temp = props.songs.length - 1;
+      }
+
+      return temp;
+    });
+  };
+
   return (
     <>
     <div className='text-center font-bold text-slate-900'>
       <h1>Playing Now 🎶🎶</h1>
-      <Details />
-      <Controls />
+      <Details 
+        song={props.songs[props.currentSongIndex]} 
+      />
+      <Controls 
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying} 
+        skipSong={skipSong}
+      />
       <audio 
-      className='player_audio'
-      src="" 
-      controls>
-      </audio>
+        ref={audioEl}
+        className='player_audio'
+        src={props.songs[props.currentSongIndex].src} 
+        controls
+      ></audio>
       <p>
-        Next Up: <span>Next Song</span>
+        Next Up: <span>{props.songs[props.nextSongIndex].title} by {props.songs[props.nextSongIndex].artist}</span>
       </p>
     </div>
+
+
       {/* <section>
         <div className="bg-white rounded-lg drop-shadow p-4 dark:bg-black dark:shadow-white">
           <div className="flex flex-col justify-center items-center ">
@@ -41,7 +76,7 @@ const Player = () => {
           </div>
         </div>
       </section> */}
-    </>
+  </>
   )
 }
 

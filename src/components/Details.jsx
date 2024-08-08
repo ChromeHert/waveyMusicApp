@@ -1,17 +1,17 @@
 import React from 'react'
 
-const Details = () => {
+const Details = (props) => {
   return (
     <>
       <div className='details'>
-        <div className="details_img">
-          <img src="https://via.placeholder.com/300" alt="song_img" />
+        <div className="details_img flex justify-center items-center">
+          <img src={props.song.img} alt="track_poster" />
         </div>
         <h3 className="details_title">
-          Song Titlte
+          {props.song.title}
         </h3>
         <h3 className="details_artist">
-          Song artist
+        {props.song.artist}
         </h3>
       </div>
     </>
