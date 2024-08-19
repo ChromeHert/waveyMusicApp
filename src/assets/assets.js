@@ -2,7 +2,7 @@ export const songsData = [
     { 
         id: 0, 
         name: "6lack", 
-        image: "track1",
+        image: "track1.png",  
         desc: "Talk back",
         duration: "3:04" 
     },
