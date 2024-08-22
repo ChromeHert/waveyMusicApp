@@ -5,7 +5,6 @@ import { ImLoop } from 'react-icons/im';
 import { MdOutlineQueueMusic } from 'react-icons/md';
 import { HiSpeakerWave } from 'react-icons/hi2';
 import { FaVolumeUp } from 'react-icons/fa';
-import { IoSearch } from 'react-icons/io5';
 import { CgMiniPlayer } from 'react-icons/cg';
 import { FiMinimize2 } from 'react-icons/fi';
 
