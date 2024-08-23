@@ -1,8 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const AlbumItem = ({image,name,desc,id}) => {
+
+  const navigate = useNavigate()
+
   return (
-    <div className='min-w-[180px] p-2 px-3 rounded cursor-pointer hover:bg-slate-400'>
+    <div className='min-w-[180px] p-2 px-3 rounded cursor-pointer hover:bg-slate-400' onClick={()=>navigate(`/albums/${id}`)}>
         <img src={image} className='rounded' alt="" />
         <p className='font-bold mt-2 mb-1'>
         {name}</p>

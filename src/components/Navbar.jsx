@@ -1,13 +1,15 @@
 import React from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate();
   return (
     <>
         <div className='w-full flex font-semibold justify-between items-center'>
             <div className='flex items-center gap-2'>
-            <IoIosArrowBack className='w-8 bg-black p-2 rounded cursor-pointer' size={32}/>
-            <IoIosArrowForward className='w-8 bg-black p-2 rounded cursor-pointer'
+            <IoIosArrowBack onClick={()=>navigate(-1)} className='w-8 bg-black p-2 rounded cursor-pointer' size={32}/>
+            <IoIosArrowForward onClick={()=>navigate(1)} className='w-8 bg-black p-2 rounded cursor-pointer'
             size={32} />
             </div>
             <div className="flex items-center gap-4">

@@ -70,30 +70,35 @@ export const albumsData = [
         id: 0,
         name: "Top 50 Global Albums",
         image: "album1.png",
-        desc: "Your weekly update of the most played album"
+        desc: "Your weekly update of the most played album",
+        bgColor: "#2a4365"
     },
     {
         id: 1,
         name: "Trending Naija",
         image: "album2.png",
-        desc: "Your most played Naija jams"
+        desc: "Your most played Naija jams",
+        bgColor: "#22543d"
     },
     {
         id: 2,
-        name: "Maga Hit Mix",
+        name: "Mega Hits Mix",
         image: "album3.png",
-        desc: "Global hits radio"
+        desc: "Global hits radio",
+        bgColor: "#742a2a"
     },
     {
         id: 3,
         name: "Non-stop Mix",
         image: "album1.png",
-        desc: "Favourite songs mashup"
+        desc: "Favourite songs mashup",
+        bgColor: "#d46db0"
     },
     {
         id: 4,
         name: "Top AfroSounds",
         image: "album1.png",
-        desc: "Your weekly update of african songs"
+        desc: "Your weekly update of african songs",
+        bgColor: "#da5c7b"
     }
 ]
