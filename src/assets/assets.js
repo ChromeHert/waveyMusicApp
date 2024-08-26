@@ -99,6 +99,6 @@ export const albumsData = [
         name: "Top AfroSounds",
         image: "album1.png",
         desc: "Your weekly update of african songs",
-        bgColor: "#da5c7b"
+        bgColor: "#eab308"
     }
 ]

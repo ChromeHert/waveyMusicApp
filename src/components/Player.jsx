@@ -7,8 +7,11 @@ import { HiSpeakerWave } from 'react-icons/hi2';
 import { FaVolumeUp } from 'react-icons/fa';
 import { CgMiniPlayer } from 'react-icons/cg';
 import { FiMinimize2 } from 'react-icons/fi';
+import { PlayerContext } from '../context/PlayerContext.jsx';
 
 const Player = () => {
+
+  const {seekBar, seekBg} = useContext(PlayerContext);
   return (
     <>
         <div className="h-[10%] bg-black flex justify-between items-center text-white px-4">
@@ -29,8 +32,8 @@ const Player = () => {
             </div> 
             <div className="flex items-center gap-5">
               <p>1:06</p>
-              <div className='w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'>
-                <hr className='h-1 border-none w-28 bg-[#1ed760] rounded-full'/>
+              <div ref={seekBg} className='w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'>
+                <hr ref={seekBar} className='h-1 border-none w-28 bg-[#1ed760] rounded-full'/>
               </div>
               <p>3:20</p>
             </div>

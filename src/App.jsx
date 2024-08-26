@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Sidebar from "./components/Sidebar";
 import Player from "./components/Player";
 import MainDisplay from "./components/MainDisplay";
+import { PlayerContext } from "./context/PlayerContext";
 
 const App = () => {
 
-
+  const {audioRef} = useContext(PlayerContext);
 
   return (
     <>
@@ -15,6 +16,7 @@ const App = () => {
         <MainDisplay />
       </div>
       <Player />
+      <audio ref={audioRef} preload="auto"></audio>
     </div> 
     </>
   )
