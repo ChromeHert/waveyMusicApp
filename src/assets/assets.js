@@ -4,21 +4,24 @@ export const songsData = [
         name: "6lack", 
         image: "track1.png",  
         desc: "Talk back",
-        duration: "3:04" 
+        duration: "3:04",
+        src: "Talkback.mp3" 
     },
     { 
         id: 1, 
         name: "Bryson Tiller", 
         image: "track2.png",
         desc: "Always forever",
-        duration: "2:50"   
+        duration: "2:50",
+        src: "Always-forever.mp3"  
     },
     { 
         id: 2, 
         name: "Khalid ft Davido & Tems", 
         image: "track3.png",
         desc: "Know your worth",
-        duration: "3:11"   
+        duration: "3:11",
+        src: "Know-your-worth.mp3"   
     },
     { 
         id: 3, 

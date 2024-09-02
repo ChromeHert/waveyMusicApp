@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from './Navbar'
 import { useParams } from 'react-router-dom'
 import { albumsData, songsData } from '../assets/assets';
 import { FaSpotify } from 'react-icons/fa6';
 import { LuTimer } from 'react-icons/lu';
+import { PlayerContext } from '../context/PlayerContext';
 
 const DisplayAlbum = () => {
 
     const {id} = useParams();
     const albumData = albumsData[id];
-  return (
+    const {playWithId} = useContext(PlayerContext);
+      return (
     <>
         <Navbar />
         <div className='mt-10 flex gap-8 flex-col md:flex-row md:items-end'>
@@ -37,7 +39,7 @@ const DisplayAlbum = () => {
         </div>
         <hr />
         {songsData.map((item,index)=>(
-            <div key={index} className='grid grid-cols-3 sm:grid-cols-4 gap-2 p-2 items-center text-slate-500 hover:bg-slate-700'>
+            <div onClick={()=>playWithId(item.id)} key={index} className='grid grid-cols-3 sm:grid-cols-4 gap-2 p-2 items-center text-slate-500 hover:bg-slate-700'>
                 <p className='text-white'>
                     <b className='mr-4 text-slate-400'>{index+1}</b>
                     <img src={item.image}
